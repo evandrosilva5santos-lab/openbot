@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang='pt-BR'>
+<head>
+<meta charset='UTF-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<title>J.A.R.V.I.S. Dashboard</title>
+<link href='https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@300;400;600&display=swap' rel='stylesheet'>
+<link rel='stylesheet' href='css/style.css'>
+</head>
+<body>
+<div class='container'>
+<aside class='sidebar'>
+<div class='logo'>J.A.R.V.I.S.</div>
+<sub class='subtitle'>Control Panel</sub>
+<div class='status-indicator'></div>
+<nav class='nav'>
+<ul>
+<li><a href='#' class='nav-link active'>Dashboard</a></li>
+<li><a href='#' class='nav-link'>Memória</a></li>
+<li><a href='#' class='nav-link'>Projetos</a></li>
+<li><a href='#' class='nav-link'>Backlog</a></li>
+<li><a href='#' class='nav-link'>Tarefas</a></li>
+<li><a href='#' class='nav-link'>Ferramentas</a></li>
+</ul>
+</nav>
+</aside>
+<main class='content'>
+<header class='header'>
+<div class='icon'>⚡</div>
+<h1 class='title'>SKILLS</h1>
+<sub class='subtitle'>Habilidades e extensões do Clawdbot</sub>
+<div class='skill-count'>XX skills</div>
+</header>
+<section class='skills-grid'>
+<div class='skill-card'>
+<div class='skill-icon'>API</div>
+<h3 class='skill-name'>API</h3>
+<p class='skill-description'>Integração com serviços externos via REST.</p>
+<div class='badge status active'>ATIVO</div>
+<div class='badge type api'>API</div>
+</div>
+<div class='skill-card'>
+<div class='skill-icon'>Scraping</div>
+<h3 class='skill-name'>Scraping</h3>
+<p class='skill-description'>Coleta de dados de fontes públicas.</p>
+<div class='badge status active'>ATIVO</div>
+<div class='badge type scraping'>Scraping</div>
+</div>
+<div class='skill-card'>
+<div class='skill-icon'>Analytics</div>
+<h3 class='skill-name'>Analytics</h3>
+<p class='skill-description'>Análise de métricas em tempo real.</p>
+<div class='badge status active'>ATIVO</div>
+<div class='badge type analytics'>Analytics</div>
+</div>
+<div class='skill-card'>
+<div class='skill-icon'>AI</div>
+<h3 class='skill-name'>AI</h3>
+<p class='skill-description'>Modelos de linguagem e inferência.</p>
+<div class='badge status active'>ATIVO</div>
+<div class='badge type ai'>AI</div>
+</div>
+<div class='skill-card'>
+<div class='skill-icon'>Infra</div>
+<h3 class='skill-name'>Infra</h3>
+<p class='skill-description'>Orquestração de containers e Serviços.</p>
+<div class='badge status active'>ATIVO</div>
+<div class='badge type infra'>Infra</div>
+</div>
+</section>
+</main>
+<div class='modal' id='skill-modal'>
+<div class='modal-content'>
+<span class='close'>&times;</span>
+<h2 class='modal-title'>Detalhes da Skill</h2>
+<p class='modal-description'>Informações detalhadas sobre a skill.</p>
+<div class='modal-stats'>...</div>
+</div>
+</div>
+<script src='js/script.js'></script>
+</body>
+</html>
