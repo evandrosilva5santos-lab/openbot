@@ -32,41 +32,7 @@
 <div class='skill-count'>XX skills</div>
 </header>
 <section class='skills-grid'>
-<div class='skill-card'>
-<div class='skill-icon'>API</div>
-<h3 class='skill-name'>API</h3>
-<p class='skill-description'>Integração com serviços externos via REST.</p>
-<div class='badge status active'>ATIVO</div>
-<div class='badge type api'>API</div>
-</div>
-<div class='skill-card'>
-<div class='skill-icon'>Scraping</div>
-<h3 class='skill-name'>Scraping</h3>
-<p class='skill-description'>Coleta de dados de fontes públicas.</p>
-<div class='badge status active'>ATIVO</div>
-<div class='badge type scraping'>Scraping</div>
-</div>
-<div class='skill-card'>
-<div class='skill-icon'>Analytics</div>
-<h3 class='skill-name'>Analytics</h3>
-<p class='skill-description'>Análise de métricas em tempo real.</p>
-<div class='badge status active'>ATIVO</div>
-<div class='badge type analytics'>Analytics</div>
-</div>
-<div class='skill-card'>
-<div class='skill-icon'>AI</div>
-<h3 class='skill-name'>AI</h3>
-<p class='skill-description'>Modelos de linguagem e inferência.</p>
-<div class='badge status active'>ATIVO</div>
-<div class='badge type ai'>AI</div>
-</div>
-<div class='skill-card'>
-<div class='skill-icon'>Infra</div>
-<h3 class='skill-name'>Infra</h3>
-<p class='skill-description'>Orquestração de containers e Serviços.</p>
-<div class='badge status active'>ATIVO</div>
-<div class='badge type infra'>Infra</div>
-</div>
+<!-- Skill cards will be inserted here by JavaScript -->
 </section>
 </main>
 <div class='modal' id='skill-modal'>
@@ -77,6 +43,39 @@
 <div class='modal-stats'>...</div>
 </div>
 </div>
+<script>
+fetch('/skills-list.json')
+  .then(r => r.json())
+  .then(skills => {
+    const container = document.querySelector('.skills-grid');
+    skills.forEach(skill => {
+      const card = document.createElement('div');
+      card.className = 'skill-card';
+      const icon = document.createElement('div');
+      icon.className = 'skill-icon';
+      icon.textContent = '⚙️';
+      card.appendChild(icon);
+      const name = document.createElement('h3');
+      name.className = 'skill-name';
+      name.textContent = skill;
+      card.appendChild(name);
+      const desc = document.createElement('p');
+      desc.className = 'skill-description';
+      desc.textContent = 'Skill instalado';
+      card.appendChild(desc);
+      const status = document.createElement('div');
+      status.className = 'badge status active';
+      status.textContent = 'ATIVO';
+      card.appendChild(status);
+      const type = document.createElement('div');
+      type.className = 'badge type';
+      type.textContent = 'API';
+      card.appendChild(type);
+      container.appendChild(card);
+    });
+  })
+  .catch(err => console.error('Erro ao carregar lista de skills', err));
+</script>
 <script src='js/script.js'></script>
 </body>
 </html>
